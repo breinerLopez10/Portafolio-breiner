@@ -7,7 +7,7 @@ import Navbar from "../../Components/Navbar/Navbar.jsx"
 import unevento from "../assets/imagenes/c.png"
 import logoun from "../assets/imagenes/UNTransp.png"
 import { Icon } from '@iconify/react';
-import cv from "../assets/cv/cv.pdf"
+import cv from "../assets/cv/Cv.pdf"
 import carrito2 from "../assets/imagenes/carrito2.png"
 import Contact from '../contact/contact.jsx'
 
