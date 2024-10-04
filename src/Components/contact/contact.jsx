@@ -11,7 +11,7 @@ const Contact = () => {
     },
     validationSchema: Yup.object({
       name: Yup.string().required('*The name is required.*'),
-      email: Yup.string().email('*It must be a valid email.').required('*El correo es requerido.*'),
+      email: Yup.string().email('*It must be a valid email.').required('*The email is required*'),
       message: Yup.string().required('*The message is required*')
     }),
     onSubmit: (values, { resetForm }) => {
