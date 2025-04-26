@@ -115,6 +115,70 @@ export const Principal = () => {
 
 
 
+
+
+
+<section className="sect3">
+  <div className="Education">
+    <h1 className="education">Experience</h1>
+
+    <br />
+    <br />
+
+<div>
+
+      <div className='container-tittle-education'>
+          <div className="unal">
+                <img src={unal}  className='img-unal' alt="Universidad Nacional de Colombia" />
+          </div>
+
+          <div>
+              <p className='tittle-college'>
+             Freelance developer <br />
+              </p>
+          </div>
+      </div>
+
+      <br />
+    <p className="university">
+    Universidad Nacional de Colombia <br />
+    </p>
+
+    <p>
+    Oct. 2025 -  Apr 2026 <br />
+    <br />
+    Freelance developer, with a focus on software development, graph theory, and data structures. Actively participating in web application development projects.
+    </p>
+
+</div>
+
+    <br />
+    <br />
+    <br />
+   
+
+    </div>
+
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <section className="sect3">
   <div className="Education">
     <h1 className="education">Education</h1>
@@ -298,7 +362,7 @@ Systems technician, with a focus on software development, equipment maintenance,
 
 
         <div>
-          <span className="iconw"><i className="fab fa-react"></i></span>
+          <span className="iconw"><i className="fab fa-angular"></i></span>
           <strong>Angular</strong>
         </div>
         <div>
@@ -323,17 +387,11 @@ Systems technician, with a focus on software development, equipment maintenance,
           <Icon icon="simple-icons:spring" className="spring-icon" />
           <strong>Spring-boot</strong>
         </div>
-
-
-
-        <div>
-          <span className="iconw"><i className="fab fa-aws"></i></span>
-          <strong>Aws</strong>
-        </div>
       </div>
 
+
       <div className='container-tittle-front'>
-      <h2 className="gen">General</h2>
+      <h2 className="gen">Cloud platforms</h2>
       </div>
 
       <div className="general">
@@ -345,12 +403,21 @@ Systems technician, with a focus on software development, equipment maintenance,
           <span className="iconw"><i className="fab fa-github"></i></span>
           <strong>Github</strong>
         </div>
+
+
+        <div>
+          <span className="iconw"><i className="fab fa-aws"></i></span>
+          <strong>Aws</strong>
+      </div>
+  
+      <div>
+      <span className="iconw"><i className="fa-brands fa-google"></i></span>
+          <strong>Gcp</strong>
+        </div>
       </div>
       </div>
 
 </section>
-
-
 
 <footer>
 
