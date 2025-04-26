@@ -134,7 +134,7 @@ export const Principal = () => {
 
           <div>
               <p className='tittle-college'>
-             Freelance developer <br />
+              Freelance Full Stack Developer <br />
               </p>
           </div>
       </div>
