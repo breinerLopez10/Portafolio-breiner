@@ -2,6 +2,7 @@ import React from 'react'
 import "./Styles/Styles.css"
 import sena from "../assets/imagenes/sena.jpg"
 import unal from "../assets/imagenes/unal.png"
+import bolivar1 from "../assets/imagenes/bolivar3.png"
 import Navbar from "../../Components/Navbar/Navbar.jsx"
 import logoun from "../assets/imagenes/UNTransp.png"
 import { Icon } from '@iconify/react';
@@ -159,35 +160,39 @@ export const Principal = () => {
 
 
 
-                <div>
+          <div>
 
             <div className='container-tittle-education'>
-              <div className="unal">
-                <img src={unal} className='img-unal' alt="Universidad Nacional de Colombia" />
+              <div className="bolivar">
+                <img src={bolivar1} className='img-unal' alt="Seguros Bolivar" />
               </div>
 
               <div>
                 <p className='tittle-college'>
-                  Freelance Full Stack Developer <br />
+                  Professional Internship <br />
                 </p>
               </div>
             </div>
 
             <br />
             <p className="university">
-              Universidad Nacional de Colombia <br />
+              Seguros Bolivar <br />
             </p>
 
             <p>
-              Oct. 2025 -  Apr 2026 <br />
+              Jul. 2025 -  ene 2026 <br />
               <br />
-              Freelance developer, with a focus on software development, graph theory, and data structures. Actively participating in web application development projects.
+              I design and develop scalable software solutions, automate workflows using n8n, and build data-driven dashboards with Power BI, Looker Studio, and Google Apps Script to support business decision-making.
             </p>
 
           </div>
+          <br />
+          <br />
+          <br />
 
-
-
+          <br />
+          <br />
+          <br />
 
         </div>
 
