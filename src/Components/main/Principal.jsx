@@ -157,6 +157,38 @@ export const Principal = () => {
           <br />
 
 
+
+
+                <div>
+
+            <div className='container-tittle-education'>
+              <div className="unal">
+                <img src={unal} className='img-unal' alt="Universidad Nacional de Colombia" />
+              </div>
+
+              <div>
+                <p className='tittle-college'>
+                  Freelance Full Stack Developer <br />
+                </p>
+              </div>
+            </div>
+
+            <br />
+            <p className="university">
+              Universidad Nacional de Colombia <br />
+            </p>
+
+            <p>
+              Oct. 2025 -  Apr 2026 <br />
+              <br />
+              Freelance developer, with a focus on software development, graph theory, and data structures. Actively participating in web application development projects.
+            </p>
+
+          </div>
+
+
+
+
         </div>
 
       </section>
