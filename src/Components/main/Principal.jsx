@@ -146,7 +146,7 @@ export const Principal = () => {
             </p>
 
             <p>
-              Nov. 2025 - May 2026 <br />
+              Nov. 2024 - May 2025 <br />
               <br />
               Freelance developer, with a focus on software development, graph theory, and data structures. Actively participating in web application development projects.
             </p>
