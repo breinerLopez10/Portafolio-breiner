@@ -14,7 +14,7 @@
     "@testing-library/react": "^13.3.0",
     "@testing-library/user-event": "^13.5.0",
     "ajax": "^0.0.4",
-    "axios": "^0.27.2",
+    "axios": "^1.15.0",
     "bcrypt": "^5.0.1",
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.20.2",
@@ -32,11 +32,11 @@
     "js-queue": "^2.0.2",
     "jsonwebtoken": "^9.0.0",
     "jws": "^4.0.0",
-    "mercadopago": "^1.5.17",
+    "mercadopago": "^2.12.0",
     "mysql": "^2.18.1",
     "mysql2": "^3.2.0",
-    "nodemailer": "^6.9.1",
-    "nodemon": "^2.0.19",
+    "nodemailer": "^8.0.5",
+    "nodemon": "^3.1.14",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-multi-carousel": "^2.8.2",
@@ -81,6 +81,6 @@
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
     "@iconify/react": "^4.1.1",
     "cross-env": "^10.1.0",
-    "react-scripts": "^5.0.1"
+    "react-scripts": "^0.0.0"
   }
 }
