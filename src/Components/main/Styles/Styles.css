@@ -90,7 +90,7 @@
     .foto{
         width: 400px;
         height: 500px;
-        background-image: url(../../assets/imagenes/Breiner.jpeg);
+        background-image: url(../../assets/imagenes/Breiner.jpg);
         background-size: cover;
         border-radius: 80%;
         margin: auto auto;

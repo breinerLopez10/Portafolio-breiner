@@ -124,8 +124,50 @@ export const Principal = () => {
           <h1 className="education">Experience</h1>
 
           <br />
+
           <br />
 
+          <br />
+          <br />
+
+  <div>
+
+            <div className='container-tittle-education'>
+              <div className="bolivar">
+                <img src={bolivar1} className='img-unal' alt="Seguros Bolivar" />
+              </div>
+
+              <div>
+                <p className='tittle-college'>
+                  Professional Internship <br />
+                </p>
+              </div>
+            </div>
+
+            <br />
+            <p className="university">
+              Seguros Bolivar <br />
+            </p>
+
+            <p>
+              Jul. 2025 -  ene 2026 <br />
+              <br />
+              I design and develop scalable software solutions, automate workflows using n8n, and build data-driven dashboards with Power BI, Looker Studio, and Google Apps Script to support business decision-making.
+            </p>
+
+          </div>
+
+
+
+
+
+
+
+
+          <br />
+          <br />
+          <br />
+          <br />
           <div>
 
             <div className='container-tittle-education'>
@@ -160,34 +202,7 @@ export const Principal = () => {
 
 
 
-          <div>
-
-            <div className='container-tittle-education'>
-              <div className="bolivar">
-                <img src={bolivar1} className='img-unal' alt="Seguros Bolivar" />
-              </div>
-
-              <div>
-                <p className='tittle-college'>
-                  Professional Internship <br />
-                </p>
-              </div>
-            </div>
-
-            <br />
-            <p className="university">
-              Seguros Bolivar <br />
-            </p>
-
-            <p>
-              Jul. 2025 -  ene 2026 <br />
-              <br />
-              I design and develop scalable software solutions, automate workflows using n8n, and build data-driven dashboards with Power BI, Looker Studio, and Google Apps Script to support business decision-making.
-            </p>
-
-          </div>
-          <br />
-          <br />
+        
           <br />
 
           <br />
