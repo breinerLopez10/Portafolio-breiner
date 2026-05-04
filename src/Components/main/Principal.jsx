@@ -341,7 +341,7 @@ export const Principal = () => {
 
 
 
-          <a href="https://e-comerce-un-xzcy.vercel.app/" target="_blank" style={{ textDecoration: 'none' }}>
+          <a href="https://e-comerce-un.vercel.app/" target="_blank" style={{ textDecoration: 'none' }}>
             <div className='container-unevento'>
               <div className='container-title-project'>
                 <div>
