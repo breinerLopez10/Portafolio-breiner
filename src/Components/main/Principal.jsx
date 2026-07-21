@@ -3,19 +3,105 @@ import "./Styles/Styles.css"
 import sena from "../assets/imagenes/sena.jpg"
 import unal from "../assets/imagenes/unal.png"
 import bolivar1 from "../assets/imagenes/bolivar3.png"
+import abbott from "../assets/imagenes/abbott.jpg"
 import Navbar from "../../Components/Navbar/Navbar.jsx"
 import logoun from "../assets/imagenes/UNTransp.png"
 import { Icon } from '@iconify/react';
 import cv from "../assets/cv/cv.pdf"
 import carrito2 from "../assets/imagenes/carrito2.png"
 import Contact from '../contact/contact.jsx'
+import { useLanguage } from '../../Context/LanguageContext'
+
+const experienceImages = [abbott, bolivar1, unal]
+const educationImages = [unal, sena]
+
+const projectsMeta = [
+  {
+    link: "https://unevento.vercel.app/home",
+    image: logoun,
+    icons: ["teenyicons:angular-outline", "simple-icons:springboot", "simple-icons:mysql"],
+  },
+  {
+    link: "https://e-comerce-un.vercel.app/",
+    image: carrito2,
+    icons: ["simple-icons:react", "fa6-brands:node", "simple-icons:express", "simple-icons:mysql"],
+  },
+]
+
+const skillGroups = [
+  {
+    key: "frontend",
+    catIcon: "ph:code-bold",
+    accent: "var(--accent)",
+    items: [
+      { icon: "fab fa-html5", label: "Html" },
+      { icon: "fab fa-css3-alt", label: "Css" },
+      { icon: "fab fa-sass", label: "Sass" },
+      { icon: "fab fa-js", label: "Javascript" },
+      { icon: "fab fa-react", label: "React" },
+      { icon: "fab fa-angular", label: "Angular" },
+      { icon: "fab fa-bootstrap", label: "Bootstrap" },
+    ],
+  },
+  {
+    key: "backend",
+    catIcon: "ph:database-bold",
+    accent: "var(--accent)",
+    items: [
+      { icon: "fab fa-node", label: "Node.js" },
+      { iconify: "simple-icons:spring", label: "Spring-boot" },
+    ],
+  },
+  {
+    key: "ai",
+    catIcon: "ph:robot-bold",
+    accent: "var(--accent-2)",
+    items: [
+      { iconify: "simple-icons:python", label: "Python" },
+      { iconify: "simple-icons:langchain", label: "LangChain" },
+      { iconify: "mdi:chart-timeline-variant", label: "LangSmith" },
+      { iconify: "simple-icons:n8n", label: "n8n" },
+      { iconify: "simple-icons:zapier", label: "Zapier" },
+      { iconify: "simple-icons:googleappsscript", label: "Google Apps Script" },
+      { iconify: "simple-icons:powerbi", label: "Power BI" },
+      { iconify: "arcticons:microsoft-copilot", label: "Copilot Studio" },
+      { iconify: "simple-icons:google", label: "Google AI Studio" },
+    ],
+  },
+  {
+    key: "aiTools",
+    catIcon: "ph:sparkle-bold",
+    accent: "var(--accent-3)",
+    items: [
+      { iconify: "simple-icons:openai", label: "ChatGPT" },
+      { iconify: "simple-icons:claude", label: "Claude" },
+      { iconify: "simple-icons:googlegemini", label: "Gemini" },
+      { iconify: "simple-icons:perplexity", label: "Perplexity" },
+      { iconify: "simple-icons:githubcopilot", label: "GitHub Copilot" },
+      { iconify: "bxl:midjourney", label: "Midjourney" },
+    ],
+  },
+  {
+    key: "cloud",
+    catIcon: "ph:cloud-bold",
+    accent: "var(--accent)",
+    items: [
+      { icon: "fab fa-wordpress-simple", label: "Wordpress" },
+      { icon: "fab fa-github", label: "Github" },
+      { icon: "fab fa-aws", label: "Aws" },
+      { icon: "fa-brands fa-google", label: "Gcp" },
+    ],
+  },
+]
 
 export const Principal = () => {
+  const { t, language } = useLanguage()
+
   return (
     <div>
       <Navbar />
 
-      <section className="sect1">
+      <section className="sect1" id="home">
 
         <div className='foto-tittles'>
 
@@ -23,469 +109,202 @@ export const Principal = () => {
             <div className="foto"></div>
           </div>
 
-
           <div className="titulos">
-            <h1 className="soft">Software</h1>
-            <h2 className="developer">Developer</h2>
-            <h2 className="nombre">Breiner López</h2>
+            <h1 className="soft">{t.hero.role}</h1>
+            <h2 className="developer">{t.hero.devRole}</h2>
+            <h2 className="nombre">{t.hero.name}</h2>
+            <p className="tagline">{t.hero.tagline}</p>
+            <a href="#contactt" className="hero-cta">{t.hero.cta}</a>
           </div>
-
 
         </div>
       </section>
-
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
 
       <section className="sect2">
         <div className='section-two'>
-          {/* 
-    <div className='card container-description '> 
-      <h2 className="tittle-description">About me</h2>
-    </div> */}
 
-
-
-
-
-
-
-
-          <div className='container-about '>
-            <div className='container-title-project'>
-              <div className='container-conectar-tittle'>
-                <Icon icon="entypo:link" />
-                <h2 className='tittle-conectar'>Conect</h2>
-              </div>
+          <div className='container-about'>
+            <div className='container-conectar-tittle'>
+              <Icon icon="entypo:link" />
+              <h2 className='tittle-conectar'>{t.connect.title}</h2>
             </div>
-            <br />
 
-
-            <div className='container-contact'>
-              <Icon icon="ic:outline-email" />
-              <p className='text-project'>
+            <div className="connect-chips">
+              <a className="connect-chip" href="mailto:brlopezf@unal.edu.co">
+                <Icon icon="ic:outline-email" />
                 brlopezf@unal.edu.co
-              </p>
-            </div>
-
-            <br />
-
-
-            <div className='container-contact'>
-              <Icon icon="mdi:linkedin" />
-
-              <a href="https://www.linkedin.com/in/breiner-lopez-ba654b25a/" target='_blank'>
-
-                <p className='text-project'>
-                  Linkedind
-                </p>
               </a>
 
-            </div>
-            <br />
-
-            <div className='container-contact'>
-              <Icon icon="mdi:github" />
-
-              <a href="https://github.com/breinerLopez10" target='_blank'>
-                <p className='text-project'>
-                  Github
-                </p>
+              <a className="connect-chip" href="https://www.linkedin.com/in/breiner-lopez-ba654b25a/" target='_blank' rel="noreferrer">
+                <Icon icon="mdi:linkedin" />
+                {t.connect.linkedin}
               </a>
-            </div>
 
-            <br />
+              <a className="connect-chip" href="https://github.com/breinerLopez10" target='_blank' rel="noreferrer">
+                <Icon icon="mdi:github" />
+                {t.connect.github}
+              </a>
 
-            <div className='container-contact'>
-              <Icon icon="material-symbols:download" />
-              <span className="cV">
-                <a href={cv} download="cv" className="cV">Curriculum</a>
-              </span>
+              <a className="connect-chip" href={cv} download="cv">
+                <Icon icon="material-symbols:download" />
+                {t.connect.cv}
+              </a>
             </div>
           </div>
 
-
         </div>
       </section>
-
-
-
-
-
-
-
 
       <section className="sect3">
         <div className="Education">
-          <h1 className="education">Experience</h1>
+          <h1 className="education">{t.experience.title}</h1>
 
-          <br />
+          <div className="timeline-grid">
+            {t.experience.items.map((item, index) => (
+              <div key={item.company} className="timeline-item">
+                <div className='container-tittle-education'>
+                  <div className="bolivar">
+                    <img src={experienceImages[index]} className='img-unal' alt={item.company} />
+                  </div>
 
-          <br />
+                  <div>
+                    <p className='tittle-college'>
+                      {item.role}
+                    </p>
+                  </div>
+                </div>
 
-          <br />
-          <br />
+                <p className="university">
+                  {item.company}
+                </p>
 
-  <div>
+                <p className="item-dates">{item.dates}</p>
 
-            <div className='container-tittle-education'>
-              <div className="bolivar">
-                <img src={bolivar1} className='img-unal' alt="Seguros Bolivar" />
-              </div>
-
-              <div>
-                <p className='tittle-college'>
-                  Professional Internship <br />
+                <p>
+                  {item.description}
                 </p>
               </div>
-            </div>
-
-            <br />
-            <p className="university">
-              Seguros Bolivar <br />
-            </p>
-
-            <p>
-              Jul. 2025 -  ene 2026 <br />
-              <br />
-              I design and develop scalable software solutions, automate workflows using n8n, and build data-driven dashboards with Power BI, Looker Studio, and Google Apps Script to support business decision-making.
-            </p>
-
+            ))}
           </div>
-
-
-
-
-
-
-
-
-          <br />
-          <br />
-          <br />
-          <br />
-          <div>
-
-            <div className='container-tittle-education'>
-              <div className="unal">
-                <img src={unal} className='img-unal' alt="Universidad Nacional de Colombia" />
-              </div>
-
-              <div>
-                <p className='tittle-college'>
-                  Freelance Full Stack Developer <br />
-                </p>
-              </div>
-            </div>
-
-            <br />
-            <p className="university">
-              Universidad Nacional de Colombia <br />
-            </p>
-
-            <p>
-              Nov. 2024 - May 2025 <br />
-              <br />
-              Freelance developer, with a focus on software development, graph theory, and data structures. Actively participating in web application development projects.
-            </p>
-
-          </div>
-
-          <br />
-          <br />
-          <br />
-
-
-
-
-        
-          <br />
-
-          <br />
-          <br />
-          <br />
-
         </div>
 
       </section>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
       <section className="sect3">
         <div className="Education">
-          <h1 className="education">Education</h1>
+          <h1 className="education">{t.education.title}</h1>
 
-          <br />
-          <br />
+          <div className="timeline-grid">
+            {t.education.items.map((item, index) => (
+              <div key={item.school + item.degree} className="timeline-item">
+                <div className='container-tittle-education'>
+                  <div className="unal">
+                    <img src={educationImages[index]} className='img-unal' alt={item.school} />
+                  </div>
 
-          <div>
+                  <div>
+                    <p className='tittle-college'>
+                      {item.school}
+                    </p>
+                  </div>
+                </div>
 
-            <div className='container-tittle-education'>
-              <div className="unal">
-                <img src={unal} className='img-unal' alt="Universidad Nacional de Colombia" />
-              </div>
+                <p className="university">
+                  {item.degree}
+                </p>
 
-              <div>
-                <p className='tittle-college'>
-                  Universidad Nacional de Colombia <br />
+                <p className="item-dates">{item.dates}</p>
+
+                <p>
+                  {item.description}
                 </p>
               </div>
-            </div>
-
-            <br />
-            <p className="university">
-              Systems and Computing Engineering <br />
-            </p>
-
-            <p>
-              Ene. 2021 - Dic. 2026 <br />
-              <br />
-              Currently studying Systems Engineering, with a focus on software development, graph theory, and data structures. Actively participating in web application development projects.
-            </p>
-
-          </div>
-
-          <br />
-          <br />
-          <br />
-          <div>
-
-            <div className='container-tittle-education'>
-              <div className="unal">
-                <img src={sena} className='img-unal' alt="Universidad Nacional de Colombia" />
-              </div>
-
-              <div>
-                <p className='tittle-college'>
-                  Servicio Nacional De Aprendizaje <br />
-                </p>
-              </div>
-            </div>
-            <br />
-            <p className="university">
-              Técnico de sistemas<br />
-            </p>
-            <p>
-              Ene. 2019 - Dic. 2020 <br />
-              <br />
-              Systems technician, with a focus on software development, equipment maintenance, and technical support. Actively participating in web application development projects
-            </p>
-
+            ))}
           </div>
 
         </div>
 
       </section>
-
-      <br />
-      <br />
-      <br />
 
       <section className="sect4">
 
-
         <div className='container-projects-tittle'>
-          <h2 id="projects" className="projects">Projects</h2>
+          <h2 id="projects" className="projects">{t.projects.title}</h2>
         </div>
-
-        <br />
-        <br />
-        <br />
-
 
         <div className="gallery-projects">
 
-
-
-          <a href="https://unevento.vercel.app/home" target="_blank" style={{ textDecoration: 'none' }}>
-            <div className='container-unevento'>
-              <div className='container-title-project'>
-                <div>
-                  <img className='img-gallery1' alt="project react" src={logoun} />
+          {t.projects.items.map((item, index) => {
+            const meta = projectsMeta[index]
+            return (
+              <a key={item.name} href={meta.link} target="_blank" rel="noreferrer" style={{ textDecoration: 'none' }}>
+                <div className='container-unevento'>
+                  <div className='container-title-project'>
+                    <div>
+                      <img className='img-gallery1' alt={item.name} src={meta.image} />
+                    </div>
+                    <div>
+                      <h2 className='tittle-unevento'>{item.name}</h2>
+                    </div>
+                  </div>
+                  <p className='text-project'>
+                    {item.description}
+                  </p>
+                  <div className='icon-container'>
+                    {meta.icons.map((icon) => (
+                      <Icon key={icon} icon={icon} className='icon-modify' />
+                    ))}
+                  </div>
                 </div>
-                <div>
-                  <h2 className='tittle-unevento'> evento</h2>
-                </div>
-              </div>
-              <p className='text-project'>
-                Web platform that centralizes and facilitates the organization and dissemination of academic and cultural events at the National University of Colombia, Bogotá headquarters.
-              </p>
-              <div className='icon-container'>
-                <Icon icon="teenyicons:angular-outline" className='icon-modify' />
-                <Icon icon="simple-icons:springboot" className='icon-modify' />
-                <Icon icon="simple-icons:mysql" className='icon-modify' />
-              </div>
-            </div>
-          </a>
-
-
-
-
-          <a href="https://e-comerce-un.vercel.app/" target="_blank" style={{ textDecoration: 'none' }}>
-            <div className='container-unevento'>
-              <div className='container-title-project'>
-                <div>
-                  <img className='img-gallery1' alt="project react" src={carrito2} />
-                </div>
-                <div>
-                  <h2 className='tittle-unevento'>Ecommerce</h2>
-                </div>
-              </div>
-              <p className='text-project'>
-                Web platform that allows buyers and sellers to market their products and centralizes lower cost items for low-income people.
-              </p>
-              <div className='icon-container'>
-                <Icon icon="simple-icons:react" className='icon-modify' />
-                <Icon icon="fa6-brands:node" className='icon-modify' />
-                <Icon icon="simple-icons:express" className='icon-modify' />
-                <Icon icon="simple-icons:mysql" className='icon-modify' />
-              </div>
-            </div>
-          </a>
-
+              </a>
+            )
+          })}
 
         </div>
       </section>
-
-
-
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-
 
       <section className="sect5">
 
         <div className='container-sect-5'>
 
+          <h2 id="sk" className="sk">{t.skills.title}</h2>
 
-          <h2 id="sk" className="sk">Skills</h2>
+          <div className="skills-grid">
+            {skillGroups.map((group) => (
+              <div className="skill-category" key={group.key} style={{ '--cat-color': group.accent }}>
+                <div className="skill-category-header">
+                  <Icon icon={group.catIcon} className="cat-icon" />
+                  <h3>{t.skills[group.key]}</h3>
+                </div>
 
-          <div className='container-tittle-front'>
-            <h2 className="front">Front-end</h2>
-
-          </div>
-
-
-          <div className="frontend">
-            <div>
-              <span className="iconw"><i className="fab fa-html5"></i></span>
-              <strong>Html</strong>
-            </div>
-            <div>
-              <span className="iconw"><i className="fab fa-css3-alt"></i></span>
-              <strong>Css</strong>
-            </div>
-            <div>
-              <span className="iconw"><i className="fab fa-sass"></i></span>
-              <strong>Sass</strong>
-            </div>
-            <div>
-              <span className="iconw"><i className="fab fa-js"></i></span>
-              <strong>Javascript</strong>
-            </div>
-            <div>
-              <span className="iconw"><i className="fab fa-react"></i></span>
-              <strong>React</strong>
-            </div>
-
-
-            <div>
-              <span className="iconw"><i className="fab fa-angular"></i></span>
-              <strong>Angular</strong>
-            </div>
-            <div>
-              <span className="iconw"><i className="fab fa-bootstrap"></i></span>
-              <strong>Boostrap</strong>
-            </div>
-          </div>
-
-          <div className='container-tittle-front'>
-            <h2 className="back">Back-end</h2>
-          </div>
-
-
-
-          <div className="backend">
-            <div>
-              <span className="iconw"><i className="fab fa-node"></i></span>
-              <strong>Node.js</strong>
-            </div>
-
-            <div>
-              <Icon icon="simple-icons:spring" className="spring-icon" />
-              <strong>Spring-boot</strong>
-            </div>
-          </div>
-
-
-          <div className='container-tittle-front'>
-            <h2 className="gen">Cloud platforms</h2>
-          </div>
-
-          <div className="general">
-            <div>
-              <span className="iconw"><i className="fab fa-wordpress-simple"></i></span>
-              <strong>Wordpress</strong>
-            </div>
-            <div>
-              <span className="iconw"><i className="fab fa-github"></i></span>
-              <strong>Github</strong>
-            </div>
-
-
-            <div>
-              <span className="iconw"><i className="fab fa-aws"></i></span>
-              <strong>Aws</strong>
-            </div>
-
-            <div>
-              <span className="iconw"><i className="fa-brands fa-google"></i></span>
-              <strong>Gcp</strong>
-            </div>
+                <div className="skill-pills">
+                  {group.items.map((skill) => (
+                    <span className="skill-pill" key={skill.label}>
+                      {skill.iconify ? (
+                        <Icon icon={skill.iconify} className="pill-icon" />
+                      ) : (
+                        <i className={`pill-icon ${skill.icon}`}></i>
+                      )}
+                      {skill.label}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            ))}
           </div>
         </div>
 
       </section>
 
       <footer>
-
-        <br />
-        <br />
-        <h2 id="contactt" className="contactt">Contact me</h2>
+        <h2 id="contactt" className="contactt">{t.contact.title}</h2>
         <div>
-
-
-
           <div className='container-component-contact'>
-            <Contact />
+            <Contact key={language} />
           </div>
-
-
         </div>
+
+        <p className="footer-rights">© {new Date().getFullYear()} Breiner López — {t.footer.rights}</p>
       </footer>
     </div>
   )

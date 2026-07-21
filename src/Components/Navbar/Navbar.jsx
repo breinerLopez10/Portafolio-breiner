@@ -1,27 +1,55 @@
-import React from 'react'
+import React, { useState } from 'react'
+import { useLanguage } from '../../Context/LanguageContext'
 
 const Navbar = () => {
+  const [isOpen, setIsOpen] = useState(false)
+  const { language, toggleLanguage, t } = useLanguage()
+
+  const closeMenu = () => setIsOpen(false)
+
   return (
-   
+
     <header className="header">
       <nav className="nav">
-        <a href="#" className="logo">Breiner L</a>
-        <button className="nav-toggle" aria-label="Abrir menú">
-          <i className="icon-menu"></i>
-        </button>
+        <a href="#home" className="logo">Breiner L</a>
 
-        <ul className="nav-menu">
+        <div className="nav-actions">
+          <button
+            className="lang-toggle"
+            onClick={toggleLanguage}
+            aria-label="Switch language"
+            type="button"
+          >
+            <span className={language === 'en' ? 'lang-option active' : 'lang-option'}>EN</span>
+            <span className="lang-divider">/</span>
+            <span className={language === 'es' ? 'lang-option active' : 'lang-option'}>ES</span>
+          </button>
+
+          <button
+            className={isOpen ? 'nav-toggle nav-toggle-active' : 'nav-toggle'}
+            aria-label="Abrir menú"
+            aria-expanded={isOpen}
+            type="button"
+            onClick={() => setIsOpen((prev) => !prev)}
+          >
+            <span className="nav-toggle-bar"></span>
+            <span className="nav-toggle-bar"></span>
+            <span className="nav-toggle-bar"></span>
+          </button>
+        </div>
+
+        <ul className={isOpen ? 'nav-menu nav-menu-visible' : 'nav-menu'}>
           <li className="nav-menu-item">
-            <a href="#" className="nav-menu-link nav-link">Home</a>
+            <a href="#home" className="nav-menu-link nav-link" onClick={closeMenu}>{t.nav.home}</a>
           </li>
           <li className="nav-menu-item">
-            <a href="#sk" className="nav-menu-link nav-link">Skills</a>
+            <a href="#sk" className="nav-menu-link nav-link" onClick={closeMenu}>{t.nav.skills}</a>
           </li>
           <li className="nav-menu-item">
-            <a href="#projects" className="nav-menu-link nav-link">Projects</a>
+            <a href="#projects" className="nav-menu-link nav-link" onClick={closeMenu}>{t.nav.projects}</a>
           </li>
           <li className="nav-menu-item">
-            <a href="#contactt" className="nav-menu-link nav-link">Contact me</a>
+            <a href="#contactt" className="nav-menu-link nav-link" onClick={closeMenu}>{t.nav.contact}</a>
           </li>
         </ul>
       </nav>
